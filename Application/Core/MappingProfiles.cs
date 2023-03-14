@@ -66,6 +66,18 @@ namespace Application.Core
             CreateMap<ChallengeTypeDto, ChallengeType>()
                 .ForAllMembers(options => options.Condition((src, dest, srcMember) => srcMember is not null));
 
+            CreateMap<QuestionType, QuestionTypeDto>()
+                .ForAllMembers(options => options.Condition((src, dest, srcMember) => srcMember is not null));
+
+            CreateMap<QuestionTypeDto, QuestionType>()
+                .ForAllMembers(options => options.Condition((src, dest, srcMember) => srcMember is not null));
+
+            CreateMap<ChatRoomType, ChatRoomTypeDto>()
+                .ForAllMembers(options => options.Condition((src, dest, srcMember) => srcMember is not null));
+
+            CreateMap<ChatRoomTypeDto, ChatRoomType>()
+                .ForAllMembers(options => options.Condition((src, dest, srcMember) => srcMember is not null));
+
             CreateMap<EventContributor, EventContributorDto>()
                 .ForMember(ec => ec.DisplayName, options => options.MapFrom(ec => ec.User!.DisplayName))
                 .ForMember(ec => ec.UserName, options => options.MapFrom(ec => ec.User!.UserName))
@@ -104,6 +116,12 @@ namespace Application.Core
                 .ForAllMembers(options => options.Condition((src, dest, srcMember) => srcMember is not null));
 
             CreateMap<ChallengeTypeCommandDto, ChallengeType>()
+                .ForAllMembers(options => options.Condition((src, dest, srcMember) => srcMember is not null));
+
+            CreateMap<QuestionTypeCommandDto, QuestionType>()
+                .ForAllMembers(options => options.Condition((src, dest, srcMember) => srcMember is not null));
+
+            CreateMap<ChatRoomTypeCommandDto, ChatRoomType>()
                 .ForAllMembers(options => options.Condition((src, dest, srcMember) => srcMember is not null));
             #endregion
         }
